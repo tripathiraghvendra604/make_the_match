@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+    {% for ques in queryset %}
+        <li>{{ ques }}</li>
+        <ul>
+        {% for ans in ques.answer_set.all %}
+            <li>{{ ans.text }}</li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+    </ul>
+{% endblock %}
